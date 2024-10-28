@@ -3,6 +3,7 @@
 - github : https://github.com/Rexshack-RedM
 
 # Dependancies
+- Also works with v2 rsg-core so far
 - rsg-core
 - rsg-menu
 
@@ -16,3 +17,4 @@
 
 # Credit
 - Apollyon#5164 for the original resouce and permission to use in this framework : https://github.com/JusCampin/oss_boats_rsg
+- Danglr for fixing client side notifications throwing errors
