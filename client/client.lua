@@ -499,11 +499,13 @@ function BoatOptionsMenu()
                     SetBoatAnchor(playerBoat, true)
                     SetBoatFrozenWhenAnchored(playerBoat, true)
                     isAnchored = true
-                    RSGCore.Functions.Notify(_U("anchorDown"), 'success', 5000)
+                    --RSGCore.Functions.Notify(_U("anchorDown"), 'success', 5000)
+                    TriggerEvent('rNotify:NotifyLeft', "You anchored the boat", "", "", "tick", 4000)    
                 else
                     SetBoatAnchor(playerBoat, false)
                     isAnchored = false
-                    RSGCore.Functions.Notify(_U("anchorUp"), 'success', 5000)
+                    --RSGCore.Functions.Notify(_U("anchorUp"), 'success', 5000)
+                    TriggerEvent('rNotify:NotifyLeft', "You raised the anchor back up", "", "", "tick", 4000)
                 end
             end
             menu.close()
@@ -552,7 +554,8 @@ function SpawnBoat()
     SetBlipSprite(boatBlip, GetHashKey("blip_canoe"), true)
     Citizen.InvokeNative(0x9CB1A1623062F402, boatBlip, name) -- SetBlipName
     IsBoating = true
-    RSGCore.Functions.Notify(_U("boatMenuTip"), 'success', 6000)
+    --RSGCore.Functions.Notify(_U("boatMenuTip"), 'success', 6000)
+    TriggerEvent('rNotify:NotifyLeft', "You brought out a boat", "", "", "tick", 4000)
 end
 
 -- Return Boat Using Prompt at Shop Location
@@ -568,6 +571,7 @@ function ReturnBoat(shopId)
     DoScreenFadeIn(500)
     IsBoating = false
     DeleteEntity(MyBoat)
+    TriggerEvent('rNotify:NotifyLeft', "You docked the boat", "", "", "tick", 4000)
 end
 
 -- Prevents Boat from Sinking
